@@ -9,6 +9,6 @@ const deviceList = [
 module.exports = {
   deviceList,
   host: process.env.HOST,
-  port: process.env.PORT,
-  publish_frequency: process.env.PUBLISH_FREQUENCY
+  port: process.env.PORT || "1883",
+  publish_frequency: process.env.PUBLISH_FREQUENCY || "10"
 }

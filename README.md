@@ -12,7 +12,7 @@ PORT=${server port}
 PUBLISH_FREQUENCY=${time-s}
 ```
 
-3. Change `env.js` device list. If you have many device, device list format as follow.
+3. Create `deviceList.js` file. Add your device array as follow.
 ```js
 const deviceList = [
   {
@@ -25,6 +25,8 @@ const deviceList = [
   }
   ...
 ]
+
+module.exports = deviceList;
 ```
 
 4. run test 

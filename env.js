@@ -1,14 +1,8 @@
 require('dotenv').config();
-const deviceList = [
-  {
-    name: "name",
-    token: "token"
-  }
-]
 
 module.exports = {
-  deviceList,
-  host: process.env.HOST,
+  deviceList: require('./deviceList'),
+  host: process.env.HOST || "127.0.0.1",
   port: process.env.PORT || "1883",
   publish_frequency: process.env.PUBLISH_FREQUENCY || "10"
 }

@@ -3,8 +3,7 @@ function randonNum(params) {
 }
 function rawData() {
   return {
-    "temperature": randonNum(100),
-    "humidity": randonNum(100)
+    "CPU.Usage": randonNum(100)
   };
 }
 function requestOpt(raw) {

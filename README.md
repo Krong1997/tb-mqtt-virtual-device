@@ -12,7 +12,7 @@ PORT=${server port}
 PUBLISH_FREQUENCY=${time-s}
 ```
 
-3. Create `deviceList.js` file. Add your device array as follow.
+3. Create `deviceList.js` file in `device` folder. Add your device array as follow.
 ```js
 const deviceList = [
   {

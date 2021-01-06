@@ -12,18 +12,17 @@ PORT=${server port}
 PUBLISH_FREQUENCY=${time-s}
 ```
 
-3. Create `deviceList.js` file in `device` folder. Add your device array as follow.
-```js
-const deviceList = [
+3. Create `deviceList.json` file in `device` folder. Add your device array as follow.
+```json
+[
   {
-    name: "name",
-    token: "token"
+    "name": "name",
+    "token": "token"
   },
   {
-    name: "name2",
-    token: "token2"
+    "name": "name2",
+    "token": "token2"
   }
-  ...
 ]
 
 module.exports = deviceList;

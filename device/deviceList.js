@@ -1,3 +1,3 @@
-const deviceList = require('../resources/deviceList.json')
+const deviceList = require('./deviceList.json')
 
 module.exports = deviceList;

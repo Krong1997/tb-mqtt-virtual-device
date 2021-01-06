@@ -1,5 +1,6 @@
 const {
-  deviceList
+  deviceList,
+  testTime
 } = require('../constant/env');
 const {
   rawData
@@ -9,17 +10,21 @@ const {
 } = require('./mqttConnector');
 const topic = require('../constant/mqttTopic');
 
-function publishData(time) {
+function publishData(frequency) {
   deviceList.forEach(device => {
     console.log("device info: ", device);
-    let t = 0;
+    let t = 1;
     const client = initConnect(device);
 
     const timeId = setInterval(() => {
+      if ((t * frequency) >= testTime && testTime !== 0) {
+        clearInterval(timeId);
+        console.log('test end');
+      }
       client.publish(topic, JSON.stringify(rawData()))
       console.log(`${device.name} connected`, t++);
       if (client.disconnected) clearInterval(timeId);
-    }, time * 1000);
+    }, frequency * 1000);
   });
 }
 

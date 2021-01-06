@@ -17,7 +17,7 @@ function publishData(frequency) {
     const client = initConnect(device);
 
     const timeId = setInterval(() => {
-      if ((t * frequency) >= testTime && testTime !== 0) {
+      if ((t * frequency) >= testTime && +testTime !== 0) {
         clearInterval(timeId);
         console.log('test end');
       }

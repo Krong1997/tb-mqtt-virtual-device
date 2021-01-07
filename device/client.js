@@ -19,12 +19,12 @@ function publishData(frequency) {
     const client = initConnect(device);
 
     const timeId = setInterval(() => {
-      if ((timeArr[idx] * frequency) >= testTime && +testTime !== 0) {
+      client.publish(topic, JSON.stringify(rawData()))
+      console.log(`${device.name} connected`, timeArr[idx] += 1);
+      if (timeArr[idx] >= testTime && +testTime !== 0) {
         clearInterval(timeId);
         console.log('test end');
       }
-      client.publish(topic, JSON.stringify(rawData()))
-      console.log(`${device.name} connected`, timeArr[idx] += 1);
       if (client.disconnected) clearInterval(timeId);
       if (idx === timeArr.length - 1) console.log('total', timeArr.reduce((accu, curr) => accu + curr));
     }, frequency * 1000);

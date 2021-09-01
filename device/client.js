@@ -19,7 +19,9 @@ function publishData(frequency) {
     const client = initConnect(device);
 
     const timeId = setInterval(() => {
-      client.publish(topic, JSON.stringify(rawData()))
+      client.publish(topic, JSON.stringify(rawData()),(e)=>{
+        console.log('send data success');
+      })
       console.log(`${device.name} connected`, timeArr[idx] += 1);
       if (timeArr[idx] >= testTime && +testTime !== 0) {
         clearInterval(timeId);
